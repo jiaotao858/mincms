@@ -22,6 +22,8 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
+    url(r'^column/(?P<column_sulg>[^/]+)/$','news.views.column_detail',name='column'),
+    url(r'^news/(?P<article_sulg>[^/]+)/$','news.views.article_detail',name='article'),
 ]
 
 if settings.DEBUG:
